@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+pandas
+matplotlib
+python-multipart
+slowapi
+python-dotenv

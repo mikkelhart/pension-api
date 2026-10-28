@@ -1,0 +1,34 @@
+file,column,type,description
+european_pension_spending_quickstart.csv,country_code,string,"Eurostat country code (e.g. DE, FR; EL = Greece, UK = United Kingdom; EU27_2020 = European Union)"
+european_pension_spending_quickstart.csv,country_iso2,string,"ISO 3166-1 alpha-2 code for joining with other data (GR, GB, ...); empty for country groups"
+european_pension_spending_quickstart.csv,country,string,Country name
+european_pension_spending_quickstart.csv,period,string,"Period as published (YYYY, e.g. 2024)"
+european_pension_spending_quickstart.csv,date,string,"First day of the period (YYYY-MM-DD), handy for plotting"
+european_pension_spending_quickstart.csv,year,integer,Calendar year
+european_pension_spending_quickstart.csv,pensions_pct_gdp,number,All pension spending as % of GDP (the headline measure)
+european_pension_spending_quickstart.csv,pensions_mio_eur,number,"All pension spending, million euro in current prices; non-euro countries are converted at exchange rates, so these values move with the currency"
+european_pension_spending_quickstart.csv,pensions_pps_per_head,number,"All pension spending per inhabitant, in purchasing power standards (PPS), comparable across countries"
+european_pension_spending_quickstart.csv,old_age_pct_gdp,number,Old-age pensions as % of GDP
+european_pension_spending_quickstart.csv,survivors_pct_gdp,number,"Survivors' pensions (paid to widows, widowers, orphans) as % of GDP"
+european_pension_spending_quickstart.csv,disability_pct_gdp,number,Disability pensions as % of GDP
+european_pension_spending_quickstart.csv,means_tested_pct_gdp,number,Means-tested pensions (paid only when income is low) as % of GDP; empty where a country reports none
+european_pension_spending_quickstart.csv,old_age_share_pct,number,Old-age pensions as % of all pension spending
+european_pension_spending_quickstart.csv,survivors_share_pct,number,Survivors' pensions as % of all pension spending
+european_pension_spending_quickstart.csv,disability_share_pct,number,Disability pensions as % of all pension spending
+european_pension_spending.csv / .parquet,country_code,string,"Eurostat country code (e.g. DE, FR; EL = Greece, UK = United Kingdom; EU27_2020 = European Union)"
+european_pension_spending.csv / .parquet,country_iso2,string,"ISO 3166-1 alpha-2 code for joining with other data (GR, GB, ...); empty for country groups"
+european_pension_spending.csv / .parquet,country,string,Country or country-group name
+european_pension_spending.csv / .parquet,is_country_group,boolean,True for groups such as EU27_2020 or euro area aggregates (exclude them when comparing countries)
+european_pension_spending.csv / .parquet,pension_type_code,string,"Type of pension benefit (TOTAL = all pensions; OLD, AOLD, PART, SRV, DIS, ERLM, ERRC are parts of it) code (see codes.csv)"
+european_pension_spending.csv / .parquet,pension_type,string,"Type of pension benefit (TOTAL = all pensions; OLD, AOLD, PART, SRV, DIS, ERLM, ERRC are parts of it) (label)"
+european_pension_spending.csv / .parquet,means_test_code,string,TOTAL = all pensions; MT = means-tested only (paid only when income or wealth is low); NMT = not means-tested code (see codes.csv)
+european_pension_spending.csv / .parquet,means_test,string,TOTAL = all pensions; MT = means-tested only (paid only when income or wealth is low); NMT = not means-tested (label)
+european_pension_spending.csv / .parquet,measure_code,string,PC_GDP = % of GDP; MIO_EUR = million euro (current prices); PPS_HAB = purchasing power standard (PPS) per inhabitant code (see codes.csv)
+european_pension_spending.csv / .parquet,measure,string,PC_GDP = % of GDP; MIO_EUR = million euro (current prices); PPS_HAB = purchasing power standard (PPS) per inhabitant (label)
+european_pension_spending.csv / .parquet,period,string,"Period as published (YYYY, e.g. 2024)"
+european_pension_spending.csv / .parquet,date,string,"First day of the period (YYYY-MM-DD), handy for plotting"
+european_pension_spending.csv / .parquet,year,integer,Calendar year
+european_pension_spending.csv / .parquet,value,number,"Pension expenditure; the unit is in the measure column: PC_GDP = % of GDP, MIO_EUR = million euro (current prices), PPS_HAB = PPS per inhabitant"
+european_pension_spending.csv / .parquet,flag,string,Eurostat status flag(s) for the value (empty = normal)
+european_pension_spending.csv / .parquet,flag_meaning,string,Plain-English meaning of the flag
+codes.csv,dimension / code / label,string,Lookup of every code used in the files

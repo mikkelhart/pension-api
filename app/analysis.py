@@ -15,7 +15,7 @@ COUNTRY_CODE_TO_NAME = {
     row["code"]: row["label"]
     for _, row in codes[codes["dimension"] == "country"].iterrows()
 }
-ls
+
 
 #Valid metrics (from the CSV)
 VALID_METRICS = [
